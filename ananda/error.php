@@ -6,10 +6,9 @@
  * @package             Ananda Theme
  * @copyright			Copyright (C) 2015 schefa.com. All rights reserved.
 */
+
 defined( '_JEXEC' ) or die( 'Restricted access' );
-	
-	$app	= JFactory::getApplication(); 
-	
+
 if (!isset($this->error)) {
 	$this->error = JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
 	$this->debug = false;
@@ -29,7 +28,7 @@ if ($this->error->getCode() == 404 ) {
 	header("HTTP/1.0 404 Not Found");
 }
 
-require_once('lib/framework.php');
+require_once (JPATH_SITE.'/templates/'.$this->template.'/lib/framework.php');
 $ananda = new AnandaTemplate($doc);
 		
 ?>
@@ -149,5 +148,3 @@ $ananda = new AnandaTemplate($doc);
     
     </body>
 </html>
-
-

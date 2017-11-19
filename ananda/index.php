@@ -12,12 +12,11 @@ $view			= $app->input->getCmd('view', '');
 $itemid			= $app->input->getVar('Itemid');
 $sitename		= $app->getCfg('sitename');
 
-$template   = $app->getTemplate(true);
-$this->params     = $template->params;
-//echo $params->get("logo");
+$template       = $app->getTemplate(true);
+$this->params   = $template->params;
 
 // Ananda Framework
-require_once(JPATH_SITE.'/templates/'.$this->template.'/lib/framework.php');
+require_once (JPATH_SITE.'/templates/'.$this->template.'/lib/framework.php');
 $ananda = new AnandaTemplate($doc, $this->params);
 
 // Component Width
@@ -27,8 +26,8 @@ $content_width = $ananda->getContentWidth();
 $menu		= $app->getMenu();
 $active		= $menu->getItem($itemid);
 if(isset($active->id)) {
-	$this->params 	= $menu->getParams( $active->id );
-	$pageclass	= $this->params->get( 'pageclass_sfx' );
+	$params 	= $menu->getParams( $active->id );
+	$pageclass	= $params->get( 'pageclass_sfx' );
 } else {
 	$pageclass	= "";	
 }
