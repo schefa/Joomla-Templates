@@ -7,30 +7,25 @@
  * @copyright			Copyright (C) 2015 schefa.com. All rights reserved.
 */
 defined( '_JEXEC' ) or die( 'Restricted access' );
-	
-	$app	= JFactory::getApplication(); 
-	
+
 if (!isset($this->error)) {
 	$this->error = JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
 	$this->debug = false;
 }
 
 // get template name and parameters
-$tpn  = $this->template;
-$app = JFactory::getApplication();
-$doc = JFactory::getDocument();
-$this->language = $doc->language;
-$this->direction = $doc->direction;
-$templateName = $this->template;
-$params = $app->getTemplate(true)->params;
-$sitename = $app->getCfg('sitename');
+$app                = JFactory::getApplication();
+$doc                = JFactory::getDocument();
+$this->language     = $doc->language;
+$this->direction    = $doc->direction;
+$sitename           = $app->getCfg('sitename');
 
 // send correct HTTP status code
 if ($this->error->getCode() == 404 ) {
 	header("HTTP/1.0 404 Not Found");
 }
 
-require_once('lib/framework.php');
+require_once(JPATH_SITE.'/templates/'.$this->template.'/lib/framework.php');
 $apas = new ApasTemplate($doc);
 		
 ?>
@@ -40,7 +35,7 @@ $apas = new ApasTemplate($doc);
 <head>
     <title><?php echo $this->error->getCode(); ?> - <?php echo $this->title; ?></title>
     
-    <?php include_once(JPATH_SITE.'/templates/'.$templateName.'/lib/head.php') ?>
+    <?php include_once(JPATH_SITE.'/templates/'.$this->template.'/lib/head.php') ?>
     
 	<style type="text/css">
 	html,body,#apas-background-color{height:100%;width:100%;}
