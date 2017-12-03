@@ -1,0 +1,27 @@
+/*******
+******** Custom
+*******/
+
+.apas-module-container{}
+.apas-header{}
+.navigation-top{}
+.navigation-bottom{}
+.apas-maincontent{}
+.apas-footer{}
+
+
+.apas-headerfull img{width:100%;}
+
+.textcenter{text-align:center;}
+.margintop{margin-top:1em;}
+.marginleft{margin-left:1em;}
+.marginright{margin-right:1em;}
+.marginbottom{margin-bottom:1em;}
+
+/******* Ananda Blue *******/
+.navigation-top{box-shadow:0 0px 2px #222}
+.apas-maincontent{background-color:#37769E;}
+.apas-module-sidebar h3,.navigation-bottom{color:#fff;}
+.navigation-bottom.apas-nav ul li *{color:#fff;}
+.navigation-bottom.apas-nav ul li:hover *{color:#000;}
+
